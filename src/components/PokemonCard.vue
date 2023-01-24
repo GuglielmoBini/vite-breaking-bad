@@ -14,7 +14,7 @@ export default {
 <template>
     <div class="pokemon-card text-center p-3 col-3 mb-4">
         <figure>
-            <img class="img-fluid" :src="image" :alt="name">
+            <img class="img-fluid p-1" :src="image" :alt="name">
         </figure>
         <figcaption>
             <div>#{{ number }}</div>
@@ -28,22 +28,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/partials/mixins' as *;
+
 .pokemon-card {
 
     img {
         width: 250px;
         height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 0 20px 2px black;
+        object-fit: contain;
+        @include card;
     }
 
     figcaption {
         padding: 10px;
-        background-color: white;
-        border-radius: 25px;
-        box-shadow: 0 0 20px 2px black;
-
+        @include card;
     }
 }
 </style>
