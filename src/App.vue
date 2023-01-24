@@ -23,8 +23,8 @@ export default {
 </script>
 
 <template>
-  <header>
-    <h1 class="text-uppercase text-center my-5">Pokèdex</h1>
+  <header class="text-center">
+    <img class="my-5" src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png" alt="pokedex">
   </header>
   <main class="container">
     <pokemon-list></pokemon-list>

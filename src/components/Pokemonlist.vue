@@ -12,7 +12,7 @@ export default {
 
 <template>
     <section id="pokemon">
-        <div class="row">
+        <div class="row justify-content-center">
             <pokemon-card v-for="pokemon in store.pokemons" :key="pokemon._id" :name="pokemon.name"
                 :image="pokemon.imageUrl" :number="pokemon.number" :type1="pokemon.type1" :type2="pokemon.type2">
                 p</pokemon-card>
