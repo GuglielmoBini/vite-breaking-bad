@@ -17,7 +17,8 @@ export default {
         <select class="form-select w-25 text-center" v-model=selectedChoice
             @change="$emit('change-choice', selectedChoice)">
             <option value="" selected>--</option>
-            <option v-for="pokemonType in store.pokemonTypes" :value="pokemonType">{{ pokemonType }}</option>
+            <option v-for="pokemonType in store.pokemonTypes" :key="pokemonType" :value="pokemonType">{{ pokemonType }}
+            </option>
         </select>
     </section>
 </template>

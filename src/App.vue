@@ -8,12 +8,13 @@ export default {
   data() {
     return {
       store,
-      selectedType: '',
+      apiUri:
+        "https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons",
     }
   },
   computed: {
     startUri() {
-      const startUrl = `${store.apiUri}?per=50&page=1`
+      const startUrl = `${this.apiUri}?per=50&page=1`
       return startUrl;
     },
   },
@@ -25,19 +26,18 @@ export default {
     },
 
     fetchType(url) {
-      axios.get(url).then(res => {
+      axios.get(url + '/types1').then(res => {
         store.pokemonTypes = res.data
       })
     },
     filterByType(type) {
-      this.selectedType = type
       const byTypeUrl = !type ? this.startUri : `${this.startUri}&eq[type1]=${type}`
       this.fetchPokemons(byTypeUrl)
     }
 
   },
   created() {
-    this.fetchType(store.typeUri)
+    this.fetchType(this.apiUri)
     this.fetchPokemons(this.startUri);
   }
 }
